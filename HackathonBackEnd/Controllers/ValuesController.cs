@@ -1,8 +1,6 @@
-﻿using System;
+﻿using HackathonBackEnd.Data.Models;
+using HackathonBackEnd.Data.Repositories;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 
 namespace HackathonBackEnd.Controllers
@@ -12,6 +10,11 @@ namespace HackathonBackEnd.Controllers
         // GET api/values
         public IEnumerable<string> Get()
         {
+            TesteRepository repo = new TesteRepository(Models.Colecoes.Teste);
+            TesteDocument model = new TesteDocument() { Nome = "Teste1", value = 1 };
+
+            repo.Insere(model);
+
             return new string[] { "value1", "value2" };
         }
 
@@ -34,11 +37,6 @@ namespace HackathonBackEnd.Controllers
         // DELETE api/values/5
         public void Delete(int id)
         {
-        }
-
-        public void Teste()
-        {
-
         }
     }
 }
