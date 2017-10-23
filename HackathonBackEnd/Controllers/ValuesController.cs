@@ -35,5 +35,10 @@ namespace HackathonBackEnd.Controllers
         public void Delete(int id)
         {
         }
+
+        public void Teste()
+        {
+
+        }
     }
 }
